@@ -12,19 +12,29 @@ def main():
     inp = input()
     inp = list(inp.split())
 
-    if len(inp) % 10 != 0:
+    if not check_multiple_of_10(inp):
         print("Error: List is not a multiple of 10")
         return 1
-    inp = list(map(int, inp))
-    result = []
 
+    inp = list(map(int, inp))
+    print(remove_multiples(inp))
+
+
+def check_multiple_of_10(inp: list):
+    if len(inp) % 10 != 0:
+        return False
+    return True
+
+
+def remove_multiples(inp: list):
+    result = []
     for i in range(len(inp)):
         # skip positions that are multiples of 2 or 3
-        if i % 2 == 0 or i % 3 == 0:
+        offset_i = i + 1
+        if offset_i % 2 == 0 or offset_i % 3 == 0:
             continue
         result.append(inp[i])
-
-    print(result)
+    return result
 
 
 if __name__ == "__main__":
