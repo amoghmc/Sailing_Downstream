@@ -13,7 +13,7 @@ def main():
 		print("Error: Invalid Input!")
 		return 1
 
-	if not check_multiple_of_10(inp):
+	if not multiple_of_10(inp):
 		print("Error: List is not a multiple of 10")
 		return 2
 
@@ -30,7 +30,7 @@ def get_input():
 	return inp
 
 
-def check_multiple_of_10(inp: list):
+def multiple_of_10(inp: list):
 	if len(inp) % 10 != 0:
 		return False
 	return True
