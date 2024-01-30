@@ -18,6 +18,7 @@ def main():
 		return 2
 
 	print(remove_multiples(inp))
+	return 0
 
 
 def get_input():
@@ -25,7 +26,7 @@ def get_input():
 	try:
 		inp = list(inp.split())
 		inp = list(map(int, inp))
-	except:
+	except ValueError:
 		return None
 	return inp
 
